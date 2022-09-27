@@ -6,6 +6,7 @@ This is a developer test that uses Firebase to build a small web application.
 - The actual tasks to perform can be found within the app on `localhost:8091`
 - Please consult vite and firebase documentation in order to understand how to work with the various tools
 - If any questions, please contact us
+- Once done, please zip your results and send them to roy@sustainabilitytech.com
 
 ## Local development
 - Install all npm packages
