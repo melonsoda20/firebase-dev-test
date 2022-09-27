@@ -4,8 +4,9 @@ import { getApp } from 'firebase/app';
 import { getFirestore, collection, query, getDocsFromServer } from 'firebase/firestore';
 
 export default {
-  url : '/books',
-  callback : async(update) => {
+  path: '/books',
+  label: 'Books',
+  callback: async(update) => {
 
     const database = getFirestore(getApp());
     const books = await getDocsFromServer(query(collection(database, 'books')));
@@ -29,7 +30,7 @@ export default {
             <h1>${ item.data().title }</h1>
             <p>${ item.data().author }</p>
           </li>
-        `)}
+        `) }
       </ul>`;
     }
 

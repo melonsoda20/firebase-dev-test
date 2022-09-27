@@ -2,7 +2,8 @@ import { html, render } from 'uhtml';
 import menu from '../extensions/menu';
 
 export default {
-  url : '/add-book',
+  path: '/add-book',
+  label: 'Add Book',
   callback(update) {
     render(document.querySelector('.container'), html`
       ${ menu(update) }

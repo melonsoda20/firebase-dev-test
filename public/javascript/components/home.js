@@ -2,7 +2,8 @@ import { html, render } from 'uhtml';
 import menu from '../extensions/menu';
 
 export default {
-  url : '/',
+  path: '/',
+  label: 'Home',
   callback(update) {
     render(document.querySelector('.container'), html`
       ${ menu(update) }
@@ -15,18 +16,18 @@ export default {
 
       <h4>Active menu item</h4>
       <p>Add an active state to the menu, currently we cannot see on which page
-      we are. Styling can be done as one sees fit</p>
+      we are. Styling can be done as you see fit</p>
 
       <h4>Add the <em>add book page</em></h4>
-      <p>Currently we cannot add a new book to the list, please make add the
+      <p>Currently we cannot add a new book to the list, please add the
       page with the following fields: <em>Author, Title and ISBN</em>. Styles
-      can be found in form.css, or maybe created manually, validation may be
+      can be found in form.css or can by created from scratch, validation may be
       done with the native html validator, each field is mandatory</p>
 
       <h4>Create a cloud function</h4>
       <p>Please create a cloud function in the /functions folder that will
-      convert the ISBN number into an url. You can find the url in the
-      books component.</p>
+      convert the ISBN number into an url when you save a document. You can find 
+      the url in the books component.</p>
 
       <h4>Load thumbnail for each book</h4>
       <p>Please make sure that each book loads a thumbnail, currently there is
