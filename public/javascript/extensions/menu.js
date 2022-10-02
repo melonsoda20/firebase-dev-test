@@ -5,7 +5,7 @@ export default update => html`
 <nav>
   <ul>
     ${ components.map(({ label, path }) => html.for({ label, path })`
-      <li><a onclick="${ () => update(path) }">${ label }</li>
+      <li><a onclick="${ () => update(path) }" class=${window.location.pathname == path ? "a-active" : ""}>${ label }</li>
     `) }
   </ul>
 </nav>

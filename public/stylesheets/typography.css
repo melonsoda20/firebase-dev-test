@@ -8,7 +8,7 @@ body {
 a:hover,
 a:visited,
 a:active,
-a {
+.a-active {
   color: #7687E4;
   text-decoration: none;
   cursor: pointer;
