@@ -40,6 +40,9 @@
 .formElement.hasDescription select {
   margin-right: 30px;
 }
+.formElement.error-message {
+  color: red;
+}
 input[type="email"],
 input[type="number"],
 input[type="text"],
