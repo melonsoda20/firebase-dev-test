@@ -16,7 +16,9 @@ export default {
     function thumbnail(item) {
       const { isbn } = item.data();
       if (isbn) {
-        const url = `https://covers.openlibrary.org/b/isbn/${ item.data().isbn }-S.jpg`;
+        // const url = `https://covers.openlibrary.org/b/isbn/${ item.data().isbn }-S.jpg`;
+        // The above part is commented out since the feature to generate the ISBN url is handled in the cloud function
+        const url = item.data().isbn;
         return html`<img src="${ url }" />`;
       }
       return '';

@@ -12,9 +12,10 @@ export default {
     const bookTitleInputErrorMessageID = "book-title-input-error";
     const bookISBNInputID = "book-ISBN-input";
     const bookISBNInputErrorMessageID = "book-ISBN-input-error";
+    const addBookResultID = "add-book-results"
     const ISBNRequiredLength = 13;
     
-    const validateBookData = () => {
+    const validateBookData = async () => {
       let isValid = true;
       const bookAuthorInputElement = document.getElementById(bookAuthorInputID);
       const bookAuthorErrorElement = document.getElementById(bookAuthorInputErrorMessageID);
@@ -48,7 +49,20 @@ export default {
       }
 
       if(isValid){
-        console.log("Implement the feature to add book data to DB here");
+        try{
+          const addBookURL = `http://localhost:5001/firebase-dev-test-123/us-central1/addBookHTTP?author=${bookAuthorInputElement.value}&isbn=${bookISBNInputElement.value}&title=${bookTitleInputElement.value}`;
+
+          fetch(addBookURL)
+          .then((response) => response.json())
+          .then((responseJSON) => {
+             // do stuff with responseJSON here...
+             const responseText = responseJSON.result
+             document.getElementById(addBookResultID).innerText = responseText
+          });
+        }
+        catch(err){
+          console.log(err)
+        }
       }
     }
 
@@ -77,7 +91,10 @@ export default {
         </div>
         <span class="formElement full error-message" id="${bookISBNInputErrorMessageID}"></span>
         <div class="formElement full">
-          <button type="button" onClick="${() => {validateBookData();}}">Add Book Data</button>
+          <button type="button" onClick="${async () => {await validateBookData();}}">Add Book Data</button>
+        </div>
+        <div class="formElement full">
+          <label id="${addBookResultID}"></label>
         </div>
       </div>
     `);
